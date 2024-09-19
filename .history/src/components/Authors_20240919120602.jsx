@@ -25,7 +25,7 @@ const Authors = (props) => {
 
     // setAuthor("");
     setBirthYear({
-      variables: { name: selectedAuthor.value, setBornTo: bornInt },
+      variables: { author: selectedAuthor.value, setBornTo: bornInt },
     });
 
     setSelectedAuthor(null);
@@ -83,7 +83,6 @@ const Authors = (props) => {
             onChange={({ target }) => setBorn(target.value)}
           />
         </div>
-        <button type="submit">Update Birth Year</button>
         </form>
       </div>
     </>

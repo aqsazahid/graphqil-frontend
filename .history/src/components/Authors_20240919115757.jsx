@@ -3,6 +3,7 @@ import { useQuery,useMutation } from "@apollo/client";
 import Select from 'react-select';
 import {ALL_AUTHORS, SET_BIRTH_YEAR} from '../gql'
 const Authors = (props) => {
+  debugger
   //const [author, setAuthor] = useState("")
   const [selectedAuthor, setSelectedAuthor] = useState(null);
   const [born, setBorn] = useState("")
@@ -25,7 +26,7 @@ const Authors = (props) => {
 
     // setAuthor("");
     setBirthYear({
-      variables: { name: selectedAuthor.value, setBornTo: bornInt },
+      variables: { author: selectedAuthor.value, setBornTo: bornInt },
     });
 
     setSelectedAuthor(null);
@@ -83,7 +84,6 @@ const Authors = (props) => {
             onChange={({ target }) => setBorn(target.value)}
           />
         </div>
-        <button type="submit">Update Birth Year</button>
         </form>
       </div>
     </>

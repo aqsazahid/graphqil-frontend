@@ -25,7 +25,6 @@ const NewBook = (props) => {
     event.preventDefault()
 
     const publishedInt = parseInt(published);
-    debugger
     await addBook({
       variables: { title, author, published: publishedInt, genres },
     });
@@ -39,9 +38,8 @@ const NewBook = (props) => {
   }
 
   const addGenre = () => {
-    debugger
     setGenres(genres.concat(genre))
-    // setGenre('')
+    setGenre('')
   }
 
   return (

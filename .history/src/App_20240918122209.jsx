@@ -10,7 +10,7 @@ import Authors from "./components/Authors";
 import Books from "./components/Books";
 import NewBook from "./components/NewBook";
 const client = new ApolloClient({
-  uri: "http://localhost:4000/",
+  uri: "YOUR_GRAPHQL_SERVER_URI",
   cache: new InMemoryCache(),
 });
 const App = () => {

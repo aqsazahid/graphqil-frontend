@@ -10,7 +10,7 @@ import Authors from "./components/Authors";
 import Books from "./components/Books";
 import NewBook from "./components/NewBook";
 const client = new ApolloClient({
-  uri: "http://localhost:4000/",
+  uri: "http://localhost:5173/",
   cache: new InMemoryCache(),
 });
 const App = () => {

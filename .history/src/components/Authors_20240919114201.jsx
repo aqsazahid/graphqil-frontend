@@ -19,25 +19,17 @@ const Authors = (props) => {
   const submit = async (event) => {
     event.preventDefault();
     const bornInt = parseInt(born);
-    // setBirthYear({
-    //   variables: { author, setBornTo: bornInt },
-    // });
-
-    // setAuthor("");
     setBirthYear({
-      variables: { name: selectedAuthor.value, setBornTo: bornInt },
+      variables: { author, setBornTo: bornInt },
     });
 
-    setSelectedAuthor(null);
+    setAuthor("");
     setBorn("");
   }
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
   const authors = data.allAuthors;
-  const options = authors.map((author) => ({
-    value: author.name,
-    label: author.name,
-  }));
+
   return (
     <>
       <div>
@@ -60,22 +52,13 @@ const Authors = (props) => {
         </table>
         <h2>set birth year</h2>
         <form onSubmit={submit}>
-        {/* <div>
+        <div>
           name
           <input
             value={author}
             onChange={({ target }) => setAuthor(target.value)}
           />
-        </div> */}
-        <div>
-            <label>Select Author</label>
-            <Select
-              value={selectedAuthor}
-              onChange={setSelectedAuthor}
-              options={options}
-              placeholder="Select author..."
-            />
-          </div>
+        </div>
         <div>
           born
           <input
@@ -83,7 +66,6 @@ const Authors = (props) => {
             onChange={({ target }) => setBorn(target.value)}
           />
         </div>
-        <button type="submit">Update Birth Year</button>
         </form>
       </div>
     </>

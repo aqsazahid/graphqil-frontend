@@ -1,23 +1,12 @@
 import { useState } from "react";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  gql
-} from "@apollo/client";
 import Authors from "./components/Authors";
 import Books from "./components/Books";
 import NewBook from "./components/NewBook";
-const client = new ApolloClient({
-  uri: "http://localhost:4000/",
-  cache: new InMemoryCache(),
-});
+
 const App = () => {
   const [page, setPage] = useState("authors");
 
   return (
-    <ApolloProvider client={client}>
     <div>
       <div>
         <button onClick={() => setPage("authors")}>authors</button>
@@ -31,7 +20,6 @@ const App = () => {
 
       <NewBook show={page === "add"} />
     </div>
-    </ApolloProvider>
   );
 };
 

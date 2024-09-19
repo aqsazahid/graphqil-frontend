@@ -2,6 +2,7 @@ import { useQuery, gql } from "@apollo/client";
 import { ALL_BOOKS} from '../gql'
 
 const Books = (props) => {
+  debugger
   const { loading, error, data } = useQuery(ALL_BOOKS);
 
   if (!props.show) {

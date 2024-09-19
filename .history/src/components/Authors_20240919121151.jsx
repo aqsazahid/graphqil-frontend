@@ -25,7 +25,7 @@ const Authors = (props) => {
 
     // setAuthor("");
     setBirthYear({
-      variables: { name: selectedAuthor.value, setBornTo: bornInt },
+      variables: { author: selectedAuthor.value, setBornTo: bornInt },
     });
 
     setSelectedAuthor(null);
